@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8"/> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title> 
+</head> 
+<body> 
+<div id="p1">
+    <p id="titulo">Cadastro de Usuários</p>
+<form method = "post" action ="PHP/cadastroUsuario.php">
+    <div class="campo">
+        <label for="nome"><strong>Nome:</strong></label>
+        <input type="text" id="nome" name="nome" size="50" required>
+    </div>
+    <div class="campo">
+        <label for="DN">Data de nascimento:</label>
+        <input type="email" id="DN" name="dataNasc" size="50" required>
+    </div>
+    <div class="campo">
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" size="30" required>
+    </div>
+    <div class="campo">
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" size="30" required>
+    </div>
+    <div class="campo">
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email" size="30" required>
+    </div>
+    <div class="campo">
+        <label for="senha">senha:</label>
+        <input type="text" id="senha" name="senha" size="30" required>
+    </div>
+    <br>
+    <button type="submit">Enviar</button>
+</form>
+</div>
+</body>
+</html>
