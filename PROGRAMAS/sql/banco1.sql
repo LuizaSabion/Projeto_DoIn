@@ -41,8 +41,10 @@ create table usuario (
 
     create table Imagem (
 	imagemID			int 		    not null auto_increment,
-    dataImg 		    varchar(100)	not null,
-    descricaoImg	    varchar(30)		not null,
+    Imagem_arq          varchar(255)    not null,
+    dataImg 		    datetime not null default current_timestamp,
+    descricaoImg	    varchar(30)		null,
+    imagem_name         varchar(100)    not null,
     primary key (imagemID)
     );
 
