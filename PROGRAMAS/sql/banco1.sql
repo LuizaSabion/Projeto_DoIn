@@ -10,12 +10,12 @@ use DoIn;
 -- Criação da tabela usuario
 create table usuario (
 	usuarioID			int 		    not null auto_increment,
-    dataNasc 		    date	        not null,
     nome 		        varchar(100)	not null,
     email	            varchar(30)		not null,
     senha 		        varchar(100)	not null,
     cpf 		        varchar(100)	not null,
     telefone	        int		        not null,
+    dataNasc 		    date	        not null,
     quantDoar           int             not null,
     quantTrocar         int             not null,
     fk_ranking          int             not null,
