@@ -34,7 +34,13 @@ function update(string $entidade, array $dados, array $criterio = []): string
     foreach($dados as $campo => $dado){
         $set[] = "{$campo} = {$dado}";
     }
-
+    //Foreach: laço de repetição que realiza uma iteração dentro de uma array. 
+    //o termo Iteração significa a repetição de uma ou mais ações.
+    //www.homehost.com.br/blog/tutoriais/php/php-foreach
+    //para cada iteração do laço de repetição, o valor do elemento atual $dados da Array é atribuído ao valor $dado. 
+    //enquanto percorremos o array, vamos também estar pegando o valor da sua chave $campo.
+    //<?php  foreach ($array as $key => $value) {#codigo}>
+    //$set[] é um arraY que utiliza os valores do array $campo como chave, para os valor da variavel $dado, que muda a cada iteração;
     $instrucao .= ' SET ' . implode(', ', $set);
 
     if(!empty($criterio)) {
