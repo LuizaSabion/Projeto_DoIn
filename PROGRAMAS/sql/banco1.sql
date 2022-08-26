@@ -1,5 +1,5 @@
 -- Drop banco de dados
--- drop database projeto01
+--drop database DoIn;
 
 -- Criação do banco de dados
 create database DoIn;
@@ -19,8 +19,13 @@ create table usuario (
     quantDoar           int             not null,
     quantTrocar         int             not null,
     fk_ranking          int             not null,
-    primary key (usuarioID),
-    foreign key (fk_ranking) references Ranking (rankingID) on delete cascade on update cascade
+    primary key (usuarioID)
+    );
+    
+    create table categoria (
+	categoriaID			int 		    not null auto_increment,
+    nome 		        varchar(100)	not null,
+    primary key (categoriaID)
     );
 
     create table Produto (
@@ -47,14 +52,7 @@ create table usuario (
     imagem_name         varchar(100)    not null,
     primary key (imagemID)
     );
-
-    create table categoria (
-	categoriaID			int 		    not null auto_increment,
-    nome 		        varchar(100)	not null,
-    primary key (categoriaID)
-    );
-  
-
+    
     create table lista_desejos (
 	fk_usuario			int 		    not null,
     fk_produto 		    int         	not null,
@@ -63,7 +61,7 @@ create table usuario (
     publicar            varchar(10)     not null,
     primary key (fk_usuario, fk_produto),
     foreign key (fk_usuario) references usuario (usuarioID) on delete cascade on update cascade,
-    foreign key (fk_produto) references Produto (produtoID) on delete cascade on update cascade,
+    foreign key (fk_produto) references Produto (produtoID) on delete cascade on update cascade
     );
 
     create table conversa (
@@ -73,7 +71,7 @@ create table usuario (
     texto               text            not null,
     primary key (fk_usuario, fk_usuario2),
     foreign key (fk_usuario) references usuario (usuarioID) on delete cascade on update cascade,
-    foreign key (fk_usuario2) references usuario (usuarioID) on delete cascade on update cascade,
+    foreign key (fk_usuario2) references usuario (usuarioID) on delete cascade on update cascade
     );
     
     create table possui (
@@ -81,6 +79,5 @@ create table usuario (
     fk_produto 		    int         	not null,
     primary key (fk_imagem, fk_produto),
     foreign key (fk_imagem) references Imagem (imagemID) on delete cascade on update cascade,
-    foreign key (fk_produto) references Produto (produtoID) on delete cascade on update cascade,
+    foreign key (fk_produto) references Produto (produtoID) on delete cascade on update cascade
     );
- 
