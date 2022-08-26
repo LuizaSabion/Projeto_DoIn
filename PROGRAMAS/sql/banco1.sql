@@ -44,15 +44,6 @@ create table usuario (
     foreign key (fk_categoria) references categoria (categoriaID) on delete cascade on update cascade
     );
 
-    create table Imagem (
-	imagemID			int 		    not null auto_increment,
-    Imagem_arq          varchar(255)    not null,
-    dataImg 		    datetime not null default current_timestamp,
-    descricaoImg	    varchar(30)		null,
-    imagem_name         varchar(100)    not null,
-    primary key (imagemID)
-    );
-    
     create table lista_desejos (
 	fk_usuario			int 		    not null,
     fk_produto 		    int         	not null,
@@ -63,6 +54,17 @@ create table usuario (
     foreign key (fk_usuario) references usuario (usuarioID) on delete cascade on update cascade,
     foreign key (fk_produto) references Produto (produtoID) on delete cascade on update cascade
     );
+
+    create table Imagem (
+	imagemID			int 		    not null auto_increment,
+    Imagem_arq          varchar(255)    not null,
+    dataImg 		    datetime not null default current_timestamp,
+    descricaoImg	    varchar(30)		null,
+    imagem_name         varchar(100)    not null,
+    primary key (imagemID)
+    );
+    
+    
 
     create table conversa (
 	fk_usuario			int 		    not null,
